@@ -30,9 +30,22 @@ class CollectionviewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         mainImage.layer.cornerRadius = 8
+        mainImage.isSkeletonable = true
+        mainImage.showSkeleton(usingColor: .lightGray)
+        titleLabel.isSkeletonable = true
+        titleLabel.showSkeleton(usingColor: .lightGray)
+        ratingImg1.isSkeletonable = true
+        ratingImg2.isSkeletonable = true
+        ratingImg3.isSkeletonable = true
+        ratingImg4.isSkeletonable = true
+        ratingImg5.isSkeletonable = true
+
     }
     
+    
     func setData(cellData: collectionCellData?) {
+        mainImage.hideSkeleton()
+        titleLabel.hideSkeleton()
         if let data = cellData {
             self.dataSource = cellData
             self.mainImage.imageFromUrl(urlString: "http://snippet-alb-testing-422974023.us-east-2.elb.amazonaws.com" + data.collectionCellImageUrl, handler: nil)

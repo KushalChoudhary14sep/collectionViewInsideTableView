@@ -37,6 +37,8 @@ class TableViewCell2: UITableViewCell {
     }
 
     func setData(cellDetails: cellData?) {
+        headerLabel.hideSkeleton()
+        moreButton.hideSkeleton()
         if let data = cellDetails {
             self.dataSource = data
             self.headerLabel.text = data.headerLbl
@@ -49,6 +51,10 @@ class TableViewCell2: UITableViewCell {
         moreButton.setTitle("more", for: .normal)
         moreButton.setTitleColor(UIColor.black, for: .normal)
         moreButton.backgroundColor = UIColor.systemGray6
+        headerLabel.isSkeletonable = true
+        headerLabel.showSkeleton(usingColor: .lightGray)
+        moreButton.isSkeletonable = true
+        moreButton.showSkeleton(usingColor: .lightGray)
     }
 }
 

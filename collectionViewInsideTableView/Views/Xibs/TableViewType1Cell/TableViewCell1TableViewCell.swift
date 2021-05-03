@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 
 class TableViewCell1TableViewCell: UITableViewCell {
@@ -18,9 +19,12 @@ class TableViewCell1TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
+        cellImg.isSkeletonable = true
+        cellImg.showSkeleton(usingColor: .lightGray)
     }
    
     func setData(promoData: Promotion) {
+        cellImg.hideSkeleton()
         DispatchQueue.main.async {
             self.promoData = promoData
             self.cellImg.imageFromUrl(urlString: promoData.coverURI!, handler: nil)
