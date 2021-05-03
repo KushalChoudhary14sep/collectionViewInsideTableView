@@ -48,7 +48,7 @@ class TableViewCell2: UITableViewCell {
     
     func setUI() {
         moreButton.layer.cornerRadius = 12
-        moreButton.setTitle("more", for: .normal)
+        moreButton.setTitle("More", for: .normal)
         moreButton.setTitleColor(UIColor.black, for: .normal)
         moreButton.backgroundColor = UIColor.systemGray6
         headerLabel.isSkeletonable = true

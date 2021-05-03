@@ -25,6 +25,7 @@ class HomeUIVC: NSObject {
         view.tableView.dataSource = self
         view.tableView.rowHeight = UITableView.automaticDimension
         view.tableView.estimatedRowHeight = UITableView.automaticDimension
+        view.tableView.separatorStyle = .none
     }
     func fetchIndexData(visibleIndex : IndexPath){
         let rail = view.homeRails.rails[visibleIndex.row]
@@ -126,7 +127,7 @@ extension HomeUIVC: UITableViewDataSource, UITableViewDelegate {
             return 155
         }
         else {
-            return 265
+            return 308
         }
     }
     

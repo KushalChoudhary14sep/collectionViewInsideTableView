@@ -14,28 +14,28 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionviewCell" id="K20-5y-cDu" customClass="CollectionviewCell" customModule="collectionViewInsideTableView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="192" height="211"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Cvj-UZ-UNk">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Cvj-UZ-UNk">
                 <rect key="frame" x="0.0" y="0.0" width="192" height="211"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EL5-Yg-x1K">
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EL5-Yg-x1K">
                         <rect key="frame" x="0.0" y="0.0" width="192" height="211"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0HJ-NG-1ef">
-                                <rect key="frame" x="12" y="0.0" width="168" height="150"/>
+                                <rect key="frame" x="26" y="0.0" width="140" height="148"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="awD-Sa-9sG"/>
+                                    <constraint firstAttribute="height" constant="148" id="awD-Sa-9sG"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KN0-8R-oYA">
-                                <rect key="frame" x="12" y="158" width="41.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="26" y="161" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="745" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-5b-68U" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="12" y="187" width="30" height="12"/>
+                                <rect key="frame" x="26" y="186" width="30" height="12"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="226-Lf-eHu"/>
@@ -45,14 +45,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ARQ-5b-68U" firstAttribute="top" secondItem="KN0-8R-oYA" secondAttribute="bottom" constant="8" id="159-BU-Y1d"/>
-                            <constraint firstItem="0HJ-NG-1ef" firstAttribute="leading" secondItem="EL5-Yg-x1K" secondAttribute="leading" constant="12" id="7WC-BR-WtO"/>
-                            <constraint firstAttribute="bottom" secondItem="ARQ-5b-68U" secondAttribute="bottom" constant="12" id="NEu-x8-wKj"/>
-                            <constraint firstAttribute="trailing" secondItem="0HJ-NG-1ef" secondAttribute="trailing" constant="12" id="TLh-tb-hqp"/>
-                            <constraint firstItem="KN0-8R-oYA" firstAttribute="leading" secondItem="EL5-Yg-x1K" secondAttribute="leading" constant="12" id="bnk-VV-j7j"/>
-                            <constraint firstItem="KN0-8R-oYA" firstAttribute="top" secondItem="0HJ-NG-1ef" secondAttribute="bottom" constant="8" id="dY4-hx-y3K"/>
+                            <constraint firstItem="ARQ-5b-68U" firstAttribute="top" secondItem="KN0-8R-oYA" secondAttribute="bottom" constant="7" id="159-BU-Y1d"/>
+                            <constraint firstItem="0HJ-NG-1ef" firstAttribute="leading" secondItem="EL5-Yg-x1K" secondAttribute="leading" constant="26" id="7WC-BR-WtO"/>
+                            <constraint firstAttribute="bottom" secondItem="ARQ-5b-68U" secondAttribute="bottom" constant="45" id="NEu-x8-wKj"/>
+                            <constraint firstAttribute="trailing" secondItem="0HJ-NG-1ef" secondAttribute="trailing" constant="26" id="TLh-tb-hqp"/>
+                            <constraint firstItem="KN0-8R-oYA" firstAttribute="leading" secondItem="EL5-Yg-x1K" secondAttribute="leading" constant="26" id="bnk-VV-j7j"/>
+                            <constraint firstItem="KN0-8R-oYA" firstAttribute="top" secondItem="0HJ-NG-1ef" secondAttribute="bottom" constant="13" id="dY4-hx-y3K"/>
                             <constraint firstItem="0HJ-NG-1ef" firstAttribute="top" secondItem="EL5-Yg-x1K" secondAttribute="top" id="ejc-5v-9o6"/>
-                            <constraint firstItem="ARQ-5b-68U" firstAttribute="leading" secondItem="EL5-Yg-x1K" secondAttribute="leading" constant="12" id="i4n-ZC-ayU"/>
+                            <constraint firstItem="ARQ-5b-68U" firstAttribute="leading" secondItem="EL5-Yg-x1K" secondAttribute="leading" constant="26" id="i4n-ZC-ayU"/>
                         </constraints>
                     </view>
                 </subviews>
