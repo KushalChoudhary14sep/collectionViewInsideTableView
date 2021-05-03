@@ -21,8 +21,10 @@ class TableViewCell1TableViewCell: UITableViewCell {
     }
    
     func setData(promoData: Promotion) {
-        self.promoData = promoData
-        self.cellImg.imageFromUrl(urlString: promoData.coverURI!, handler: nil)
+        DispatchQueue.main.async {
+            self.promoData = promoData
+            self.cellImg.imageFromUrl(urlString: promoData.coverURI!, handler: nil)
+        }
     }
     
     func setUI(){

@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 class HomeRestManager : NSObject {
-    let userId : String = "b3dc96fa-6b2c-40ed-bd73-21112634e15e"
+    let userId : String = "045928ba-cc75-481a-b1ee-9f1196917e45"
     static let apiProvider = MoyaProvider<HomeAPI>()
     static let shared = HomeRestManager()
     

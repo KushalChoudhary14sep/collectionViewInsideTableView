@@ -26,12 +26,12 @@ extension UIImageView {
                         DispatchQueue.main.async {
                             let image = downloadedimage.imageWith(newSize: CGSize(width: 200, height: 200))
                             self.image = image
-                            //handler?(true)
+                            handler?(true)
                         }
                         ImageViewerDataSource.shared.saveImageDocumentDirectory(id: urlString, image: downloadedimage)
                     }
                 }else{
-                   // handler?(false)
+                   handler?(false)
                 }
             }
             task.resume()
