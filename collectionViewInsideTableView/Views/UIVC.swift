@@ -50,7 +50,7 @@ class HomeUIVC: NSObject {
                         case .success(let response):
                             var collectionData = [collectionCellData]()
                             for item in response.items {
-                                collectionData.append(collectionCellData(cellImg: item.coverURI, cellLbl: item.title))
+                                collectionData.append(collectionCellData(cellImg: item.coverURI, cellLbl: item.title, rating: item.rating))
                             }
                             let data = cellData(topLabel: response.title ?? "", collectionData: collectionData)
                             cell.setData(cellDetails: data)
@@ -68,7 +68,7 @@ class HomeUIVC: NSObject {
                         case .success(let response):
                             var collectionData = [collectionCellData]()
                             for item in response.items! {
-                                collectionData.append(collectionCellData(cellImg: item.summary.coverURI, cellLbl: item.summary.title))
+                                collectionData.append(collectionCellData(cellImg: item.summary.coverURI, cellLbl: item.summary.title, rating: Double(item.summary.rating)))
                             }
                             let data = cellData(topLabel: "Continue Reading...", collectionData: collectionData)
                             cell.setData(cellDetails: data)
@@ -86,7 +86,7 @@ class HomeUIVC: NSObject {
                         case .success(let response):
                             var collectionData = [collectionCellData]()
                             for item in response.items! {
-                                collectionData.append(collectionCellData(cellImg: item.coverURI, cellLbl: item.title))
+                                collectionData.append(collectionCellData(cellImg: item.coverURI, cellLbl: item.title, rating: item.rating))
                             }
                             let data = cellData(topLabel: response.title ?? "", collectionData: collectionData)
                             cell.setData(cellDetails: data)

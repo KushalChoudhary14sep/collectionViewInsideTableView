@@ -8,5 +8,6 @@ target 'collectionViewInsideTableView' do
   # Pods for collectionViewInsideTableView
 	pod 'Moya'
 	pod 'SkeletonView'
+	pod 'Cosmos', '~> 23.0'
 
 end

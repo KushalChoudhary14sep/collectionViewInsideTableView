@@ -6,25 +6,25 @@
 //
 
 import UIKit
+import Cosmos
 
 struct collectionCellData {
     let collectionCellImageUrl : String
     let collectionCellLabel: String
+    let rating: Double
     
-    init(cellImg: String, cellLbl: String) {
-        collectionCellImageUrl = cellImg
-        collectionCellLabel = cellLbl
+    init(cellImg: String, cellLbl: String, rating: Double) {
+        self.collectionCellImageUrl = cellImg
+        self.collectionCellLabel = cellLbl
+        self.rating = rating
     }
     
 }
 class CollectionviewCell: UICollectionViewCell {
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var ratingImg1: UIImageView!
-    @IBOutlet weak var ratingImg2: UIImageView!
-    @IBOutlet weak var ratingImg3: UIImageView!
-    @IBOutlet weak var ratingImg4: UIImageView!
-    @IBOutlet weak var ratingImg5: UIImageView!
+    @IBOutlet weak var rating: CosmosView!
+    
     
     var dataSource : collectionCellData?
     override func awakeFromNib() {
@@ -34,11 +34,11 @@ class CollectionviewCell: UICollectionViewCell {
         mainImage.showSkeleton(usingColor: .lightGray)
         titleLabel.isSkeletonable = true
         titleLabel.showSkeleton(usingColor: .lightGray)
-        ratingImg1.isSkeletonable = true
-        ratingImg2.isSkeletonable = true
-        ratingImg3.isSkeletonable = true
-        ratingImg4.isSkeletonable = true
-        ratingImg5.isSkeletonable = true
+        rating.isSkeletonable = true
+        rating.showSkeleton(usingColor: .lightGray)
+        rating.settings.starSize = 15
+        rating.settings.starMargin = 2
+      
 
     }
     
@@ -46,10 +46,12 @@ class CollectionviewCell: UICollectionViewCell {
     func setData(cellData: collectionCellData?) {
         mainImage.hideSkeleton()
         titleLabel.hideSkeleton()
+        rating.hideSkeleton()
         if let data = cellData {
             self.dataSource = cellData
             self.mainImage.imageFromUrl(urlString: "http://snippet-alb-testing-422974023.us-east-2.elb.amazonaws.com" + data.collectionCellImageUrl, handler: nil)
             self.titleLabel.text = data.collectionCellLabel
+            self.rating.rating = data.rating
         }
     }
 
