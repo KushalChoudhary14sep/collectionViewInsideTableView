@@ -59,9 +59,8 @@ class ViewController: UIViewController, HomeViewControllerVCView {
         case .COLLECTION:
             DispatchQueue.main.async {
                 if let cell = self.tableView.cellForRow(at: visibleIndex) as?  TableViewCell2{
-                    HomeRestManager.shared.getCollection(page: 10, psize: 10, collectionName: rail.collectionName ?? "") { (response) in
+                    HomeRestManager.shared.getCollection(page: 0, psize: 20, collectionName: rail.collectionName ?? "") { (response) in
                         switch response {
-                        
                         case .success(let response):
                             var collectionData = [collectionCellData]()
                             for item in response.items {
