@@ -10,11 +10,8 @@ import UIKit
 
 class HomeVM: NSObject {
     
-    weak var view: HomeViewControllerVCView! {
-        didSet{
-            loadHomeRails()
-        }
-    }
+    weak var view: HomeViewControllerVCView!
+    
     func loadHomeRails(){
         HomeRestManager.shared.getHomeRails { (response) in
             switch response {

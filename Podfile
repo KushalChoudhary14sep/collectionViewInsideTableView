@@ -7,5 +7,6 @@ target 'collectionViewInsideTableView' do
 
   # Pods for collectionViewInsideTableView
 	pod 'Moya'
+	pod 'SkeletonView'
 
 end

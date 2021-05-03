@@ -7,11 +7,11 @@ import Foundation
 
 // MARK: - Recommended
 struct Recommended: Codable {
-    let paging: Paging
-    let items: [Item]
-    let sortedBy: SortedBy
-    let title, recommendedDescription: String
-    let filteredBy: FilteredBy
+    let paging: Paging?
+    let items: [Item]?
+    let sortedBy: SortedBy?
+    let title, recommendedDescription: String?
+    let filteredBy: FilteredBy?
 
     enum CodingKeys: String, CodingKey {
         case paging, items, sortedBy, title

@@ -10,9 +10,10 @@ import UIKit
 
 struct cellData {
     let headerLbl: String
-    
-    init(topLabel: String){
-        headerLbl = topLabel
+    let collectionData : [collectionCellData]?
+    init(topLabel: String, collectionData : [collectionCellData]){
+        self.headerLbl = topLabel
+        self.collectionData = collectionData
     }
 }
 
@@ -24,7 +25,7 @@ class TableViewCell2: UITableViewCell {
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
+    var dataSource : cellData?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +36,12 @@ class TableViewCell2: UITableViewCell {
         setUI()
     }
 
-    func setData(cellDetails: cellData) {
-        self.headerLabel.text = cellDetails.headerLbl
+    func setData(cellDetails: cellData?) {
+        if let data = cellDetails {
+            self.dataSource = data
+            self.headerLabel.text = data.headerLbl
+            self.collectionView.reloadData()
+        }
     }
     
     func setUI() {
@@ -49,15 +54,17 @@ class TableViewCell2: UITableViewCell {
 
 extension TableViewCell2: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return dataSource?.collectionData?.count ?? 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionviewCell", for: indexPath) as? CollectionviewCell else {
                    return UICollectionViewCell()
-               }
-      //  cell.setData(cellData: collectionCellData(cellImg: UIImage(named: "componentsBannerThumb")!, cellLbl: "Boy Erased"))
-               return cell
+        }
+        if let data = self.dataSource?.collectionData?[indexPath.row] {
+            cell.setData(cellData: data)
+        }
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

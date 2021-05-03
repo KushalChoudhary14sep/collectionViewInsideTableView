@@ -8,11 +8,11 @@
 import UIKit
 
 struct collectionCellData {
-    let collectionCellImage: UIImage
+    let collectionCellImageUrl : String
     let collectionCellLabel: String
     
-    init(cellImg: UIImage, cellLbl: String) {
-        collectionCellImage = cellImg
+    init(cellImg: String, cellLbl: String) {
+        collectionCellImageUrl = cellImg
         collectionCellLabel = cellLbl
     }
     
@@ -26,15 +26,18 @@ class CollectionviewCell: UICollectionViewCell {
     @IBOutlet weak var ratingImg4: UIImageView!
     @IBOutlet weak var ratingImg5: UIImageView!
     
+    var dataSource : collectionCellData?
     override func awakeFromNib() {
         super.awakeFromNib()
         mainImage.layer.cornerRadius = 8
     }
     
-    func setData(cellData: collectionCellData) {
-        self.mainImage.image = cellData.collectionCellImage
-        self.titleLabel.text = cellData.collectionCellLabel
-        
+    func setData(cellData: collectionCellData?) {
+        if let data = cellData {
+            self.dataSource = cellData
+            self.mainImage.imageFromUrl(urlString: "http://snippet-alb-testing-422974023.us-east-2.elb.amazonaws.com" + data.collectionCellImageUrl, handler: nil)
+            self.titleLabel.text = data.collectionCellLabel
+        }
     }
 
 }

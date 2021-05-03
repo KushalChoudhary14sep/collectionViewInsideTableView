@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 class HomeRestManager : NSObject {
+    let userId : String = "b3dc96fa-6b2c-40ed-bd73-21112634e15e"
     static let apiProvider = MoyaProvider<HomeAPI>()
     static let shared = HomeRestManager()
     
@@ -60,8 +61,8 @@ class HomeRestManager : NSObject {
         }
     }
     
-    func getContinueReading(page: Int, psize: Int, userId: String, handler: ((Result<ContinueReading,Error>) -> Void)?) {
-        HomeRestManager.apiProvider.request(.getContinueReading(page: page, psize: psize, userId: userId)) { (response) in
+    func getContinueReading(page: Int, psize: Int, handler: ((Result<ContinueReading,Error>) -> Void)?) {
+        HomeRestManager.apiProvider.request(.getContinueReading(page: page, psize: psize, userId: self.userId)) { (response) in
             switch response {
             case .success(let response):
                 do{
@@ -76,8 +77,8 @@ class HomeRestManager : NSObject {
         }
     }
     
-    func getRecommneded(page: Int, psize: Int, userId: String, handler: ((Result<Recommended, Error>) -> Void)?) {
-        HomeRestManager.apiProvider.request(.getRecommended(page: page, psize: psize, userId: userId)) { (response) in
+    func getRecommneded(page: Int, psize: Int, handler: ((Result<Recommended, Error>) -> Void)?) {
+        HomeRestManager.apiProvider.request(.getRecommended(page: page, psize: psize, userId: self.userId)) { (response) in
             switch response{
             case .success(let response):
                 do{

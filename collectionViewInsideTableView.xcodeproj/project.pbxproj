@@ -26,6 +26,9 @@
 		CA210A0B2637FFAA00123E1A /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA210A0A2637FFAA00123E1A /* Collection.swift */; };
 		CA210A0E2638003800123E1A /* ContinueReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA210A0D2638003800123E1A /* ContinueReading.swift */; };
 		CA210A11263801AC00123E1A /* Recommended.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA210A10263801AC00123E1A /* Recommended.swift */; };
+		CA573738263FD4B3009033DF /* UIImage+DownloadingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA573737263FD4B3009033DF /* UIImage+DownloadingImage.swift */; };
+		CA57373B263FD4F5009033DF /* UIImage+UrlImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57373A263FD4F5009033DF /* UIImage+UrlImage.swift */; };
+		CA57373E263FD50C009033DF /* String+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57373D263FD50C009033DF /* String+Base.swift */; };
 		CAD352A52632F4E700E918DA /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD352A42632F4E700E918DA /* APIProvider.swift */; };
 		CAD352AF2632F6C000E918DA /* HomeRestManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD352AE2632F6C000E918DA /* HomeRestManger.swift */; };
 		CAD352B22632F74700E918DA /* Rails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD352B12632F74700E918DA /* Rails.swift */; };
@@ -55,6 +58,9 @@
 		CA210A0A2637FFAA00123E1A /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		CA210A0D2638003800123E1A /* ContinueReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueReading.swift; sourceTree = "<group>"; };
 		CA210A10263801AC00123E1A /* Recommended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommended.swift; sourceTree = "<group>"; };
+		CA573737263FD4B3009033DF /* UIImage+DownloadingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownloadingImage.swift"; sourceTree = "<group>"; };
+		CA57373A263FD4F5009033DF /* UIImage+UrlImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UrlImage.swift"; sourceTree = "<group>"; };
+		CA57373D263FD50C009033DF /* String+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base.swift"; sourceTree = "<group>"; };
 		CAD352A42632F4E700E918DA /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		CAD352AE2632F6C000E918DA /* HomeRestManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRestManger.swift; sourceTree = "<group>"; };
 		CAD352B12632F74700E918DA /* Rails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rails.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 		CA08D18226329A1300A9DA99 /* collectionViewInsideTableView */ = {
 			isa = PBXGroup;
 			children = (
+				CA573736263FD494009033DF /* Extensions */,
 				CAD352A02632F4C200E918DA /* Networking */,
 				CA08D1B62632A36C00A9DA99 /* Models */,
 				CA08D1AD2632A14C00A9DA99 /* Views */,
@@ -176,6 +183,16 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CA573736263FD494009033DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA573737263FD4B3009033DF /* UIImage+DownloadingImage.swift */,
+				CA57373A263FD4F5009033DF /* UIImage+UrlImage.swift */,
+				CA57373D263FD50C009033DF /* String+Base.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CAD352A02632F4C200E918DA /* Networking */ = {
@@ -340,6 +357,7 @@
 				CAD352AF2632F6C000E918DA /* HomeRestManger.swift in Sources */,
 				CA210A082637FF3800123E1A /* Promotion.swift in Sources */,
 				CA210A0B2637FFAA00123E1A /* Collection.swift in Sources */,
+				CA57373E263FD50C009033DF /* String+Base.swift in Sources */,
 				CA210A0E2638003800123E1A /* ContinueReading.swift in Sources */,
 				CA210A11263801AC00123E1A /* Recommended.swift in Sources */,
 				CA08D19D26329AA000A9DA99 /* TableViewCell1TableViewCell.swift in Sources */,
@@ -347,7 +365,9 @@
 				CA08D1AF2632A18000A9DA99 /* UIVC.swift in Sources */,
 				CAD352A52632F4E700E918DA /* APIProvider.swift in Sources */,
 				CA08D1B32632A18B00A9DA99 /* VM.swift in Sources */,
+				CA573738263FD4B3009033DF /* UIImage+DownloadingImage.swift in Sources */,
 				CA08D18626329A1300A9DA99 /* SceneDelegate.swift in Sources */,
+				CA57373B263FD4F5009033DF /* UIImage+UrlImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

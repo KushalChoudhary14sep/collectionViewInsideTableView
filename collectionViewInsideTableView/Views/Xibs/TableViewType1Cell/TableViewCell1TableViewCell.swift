@@ -13,13 +13,16 @@ class TableViewCell1TableViewCell: UITableViewCell {
     @IBOutlet weak var cellContentview: UIView!
     @IBOutlet weak var cellImg: UIImageView!
     
+    var promoData : Promotion?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
     }
-    
-    func setData(data: Rail){
-        
+   
+    func setData(promoData: Promotion) {
+        self.promoData = promoData
+        self.cellImg.imageFromUrl(urlString: promoData.coverURI!, handler: nil)
     }
     
     func setUI(){

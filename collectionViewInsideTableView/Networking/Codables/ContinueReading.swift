@@ -7,17 +7,12 @@ import Foundation
 
 // MARK: - ContinueReading
 struct ContinueReading: Codable {
-    let paging: Paging
-    let items: [ContinueReadingItem]
-    let sortedBy: SortedBy
-    let filteredBy: ContinueReadingFilteredBy
+    let paging: Paging?
+    let items: [ContinueReadingItem]?
+    let sortedBy: SortedBy?
+    let filteredBy: FilteredBy?
 }
 
-// MARK: - FilteredBy
-struct ContinueReadingFilteredBy: Codable {
-    let audio: Bool
-    let rating: Int
-}
 
 // MARK: - Item
 struct ContinueReadingItem: Codable {
